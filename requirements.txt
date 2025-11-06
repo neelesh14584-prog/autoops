@@ -1,0 +1,9 @@
+fastapi
+uvicorn[standard]
+httpx
+pydantic
+flask
+streamlit
+python-dotenv
+watchdog
+docker   # optional - used if you want docker SDK actions

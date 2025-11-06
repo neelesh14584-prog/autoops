@@ -1,0 +1,28 @@
+{
+  "name": "default-remediation",
+  "steps": [
+    {
+      "id": "detect",
+      "type": "anomaly_detection",
+      "params": {
+        "latency_threshold_ms": 300,
+        "error_rate_threshold": 0.2
+      }
+    },
+    {
+      "id": "fix_restart",
+      "type": "action_restart_service",
+      "params": {
+        "service_name": "sim-service",
+        "method": "http_restart" 
+      }
+    },
+    {
+      "id": "post_check",
+      "type": "verification",
+      "params": {
+        "check_endpoint": "/"
+      }
+    }
+  ]
+}
